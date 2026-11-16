@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>inVolte - fotowoltaika: projekt, montaż, serwis | Swarzędz</title>
+<meta name="description" content="Instalacje fotowoltaiczne dla domów i firm: projekt, dokumentacja, montaż i serwis. Pomiary i odbiory instalacji elektrycznych. Swarzędz, Dominowo.">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preload" as="image" href="img/dom-mob-480.webp" imagesrcset="img/dom-mob-480.webp 480w, img/dom-mob-640.webp 640w, img/dom-mob-780.webp 780w" imagesizes="100vw" media="(max-width:760px)" fetchpriority="high">
+<link rel="preload" as="image" href="img/dom-1614.webp" imagesrcset="img/dom-1024.webp 1024w, img/dom-1614.webp 1614w" imagesizes="100vw" media="(min-width:761px)" fetchpriority="high">
+<link rel="preload" as="font" type="font/woff2" href="fonts/archivo-rdzen.woff2" crossorigin>
+<style>
+@font-face{font-family:"Archivo";font-weight:400 800;font-stretch:100% 125%;font-display:swap;src:url(fonts/archivo-rdzen.woff2) format("woff2");unicode-range:U+0020-007E,U+00A0-00FF,U+2013-2026,U+20AC,U+2122}
+@font-face{font-family:"Archivo";font-weight:400 800;font-stretch:100% 125%;font-display:swap;src:url(fonts/archivo-pl.woff2) format("woff2");unicode-range:U+0104-0107,U+0118-0119,U+0141-0144,U+015A-015B,U+0179-017C}
+:root{--r:#FF2400;--rb:#E52000;--szary:#B0B0B0;--k:#16171A;--t:#24262A;--s:#5A5F67;--l:#F1F3F5;--line:#DCE0E5;--dk:#131416;--hh:76px;--gut:clamp(16px,3vw,56px);--w:1440px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:var(--hh);-webkit-text-size-adjust:100%}
+body{margin:0;font-family:"Archivo",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:17px;line-height:1.6;color:var(--t);background:#fff;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3{font-weight:800;line-height:1.08;margin:0;letter-spacing:-.015em;color:var(--k);font-stretch:108%}
+h2{font-size:clamp(30px,3.2vw,50px)}
+h3{font-size:21px;line-height:1.2;font-weight:700}
+p{margin:0}
+.wrap{width:min(var(--w),100% - 2*var(--gut));margin-inline:auto}
+.btn{display:inline-flex;align-items:center;gap:12px;background:var(--rb);color:#fff;font-weight:700;font-size:18px;text-decoration:none;padding:17px 26px 17px 22px;border-radius:3px;border:0;cursor:pointer;line-height:1.2;transition:background .2s,transform .2s;font-family:inherit}
+.btn:hover{background:var(--r)}
+.btn:active{transform:translateY(1px)}
+.btn svg{width:15px;height:27px;flex:none}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid var(--r);outline-offset:2px}
+.mk{color:var(--r)}
+
+/* naglowek */
+.top{position:sticky;top:0;z-index:50;background:#fff;height:var(--hh);border-bottom:1px solid var(--line)}
+.top .wrap{height:100%;display:flex;align-items:center;gap:28px}
+.logo{display:block;flex:none}
+.logo img{width:150px;height:auto}
+.nav{display:flex;gap:4px;margin-left:auto}
+.nav a{text-decoration:none;font-weight:600;font-size:16px;padding:10px 14px;border-radius:3px;color:var(--t)}
+.nav a:hover{color:var(--rb)}
+.tel{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;font-size:18px;color:var(--k);padding:10px 0 10px 18px;border-left:1px solid var(--line);white-space:nowrap}
+.tel svg{width:20px;height:20px;color:var(--rb);flex:none}
+.burg{display:none;margin-left:auto;background:none;border:0;width:46px;height:46px;padding:11px;cursor:pointer}
+.burg span{display:block;height:3px;background:var(--k);margin:5px 0;border-radius:2px;transition:transform .25s,opacity .2s}
+.menu-open .burg span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.menu-open .burg span:nth-child(2){opacity:0}
+.menu-open .burg span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+
+/* hero */
+.hero{position:relative;min-height:calc(100svh - var(--hh));display:flex;align-items:flex-end;color:#fff;overflow:hidden;background:#2a3a4c}
+.hero picture,.hero picture img{position:absolute;inset:0;width:100%;height:100%}
+.hero picture img{object-fit:cover;object-position:50% 40%}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,12,16,.78) 0%,rgba(10,12,16,.5) 38%,rgba(10,12,16,0) 66%),linear-gradient(0deg,rgba(10,12,16,.55) 0%,rgba(10,12,16,0) 45%);z-index:1}
+.ciecie{position:absolute;z-index:1;top:0;bottom:0;left:61%;width:60px;pointer-events:none}
+.ciecie svg{width:100%;height:100%;display:block}
+.hero-in{position:relative;z-index:2;padding:clamp(40px,7vh,88px) 0 clamp(44px,9vh,104px)}
+.hero h1{color:#fff;font-size:clamp(40px,5.2vw,82px);max-width:13ch;line-height:1.02;letter-spacing:-.025em}
+.hero .lead{font-size:clamp(18px,1.45vw,22px);line-height:1.5;max-width:40ch;margin-top:22px;color:#EEF1F4}
+.hero .btn{margin-top:32px}
+.hero .gdzie{margin-top:20px;font-size:15px;color:#D4D9DF}
+
+/* sekcje */
+.sek{padding:clamp(64px,8vw,120px) 0}
+.szara{background:var(--l)}
+.glowa{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px 64px;align-items:end;margin-bottom:clamp(32px,4vw,56px)}
+.glowa p{color:var(--s);font-size:18px;max-width:52ch}
+
+/* oferta: karty */
+.pas{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.karta{position:relative;background:#fff;display:flex;flex-direction:column;min-width:0}
+.karta .fot{position:relative;aspect-ratio:4/3;overflow:hidden;background:#dfe4ea}
+.karta .fot img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.karta:hover .fot img{transform:scale(1.03)}
+.karta .tx{padding:22px 4px 6px}
+.karta h3{position:relative;padding-left:22px}
+.karta h3::before{content:"";position:absolute;left:5px;top:1px;width:3px;height:24px;background:var(--r);transform:rotate(14deg)}
+.karta p{color:var(--s);margin-top:10px;font-size:16px}
+.karta ul{margin:12px 0 0;padding:0;list-style:none;font-size:15px;color:var(--t)}
+.karta li{padding:6px 0;border-top:1px solid var(--line)}
+.strz{display:none}
+
+/* ciemna: pomiary */
+.ciemna{background:var(--dk);color:#C9CED5;position:relative;overflow:hidden}
+.ciemna h2{color:#fff}
+.ciemna .duzy-mk{position:absolute;right:-120px;top:50%;transform:translateY(-50%);width:clamp(260px,30vw,460px);color:#202226;pointer-events:none}
+.pom{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:40px 80px;position:relative}
+.pom .opis p{margin-top:20px;font-size:18px;max-width:40ch}
+.pom .opis .inst{margin-top:28px;color:#fff;font-weight:700;font-size:18px}
+.lista-pom{list-style:none;margin:0;padding:0}
+.lista-pom li{display:grid;grid-template-columns:22px minmax(0,1fr);gap:16px;padding:22px 0;border-top:1px solid #2C2F34}
+.lista-pom li:last-child{border-bottom:1px solid #2C2F34}
+.lista-pom .sl{width:3px;height:30px;background:var(--r);transform:rotate(14deg);margin:4px 0 0 8px}
+.lista-pom h3{color:#fff;font-size:20px}
+.lista-pom p{margin-top:6px;font-size:16px}
+
+/* proces */
+.kroki{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:2px solid var(--k)}
+.krok{padding:28px 32px 8px 0;position:relative}
+.krok+.krok{padding-left:40px}
+.krok+.krok::before{content:"";position:absolute;left:4px;top:-30px;width:3px;height:92px;background:var(--r);transform:rotate(14deg);transform-origin:top}
+.krok h3{font-size:clamp(24px,2.2vw,32px)}
+.krok p{color:var(--s);margin-top:12px}
+.etapy{margin-top:clamp(40px,5vw,72px);display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:24px 64px}
+.etapy h3{font-size:22px}
+.etapy ol{margin:0;padding:0;list-style:none;columns:2;column-gap:48px;counter-reset:e}
+.etapy li{break-inside:avoid;padding:12px 0 12px 36px;border-top:1px solid var(--line);position:relative;counter-increment:e}
+.etapy li::before{content:counter(e);position:absolute;left:0;top:12px;font-weight:800;color:var(--rb)}
+
+/* liczymy */
+.licz{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:48px 80px;align-items:start}
+.cytat{margin:0;font-size:clamp(26px,2.5vw,38px);line-height:1.22;font-weight:700;color:var(--k);letter-spacing:-.01em;position:relative;padding-left:44px}
+.cytat::before{content:"";position:absolute;left:10px;top:4px;width:4px;height:calc(100% - 8px);background:var(--r);transform:skewX(-14deg)}
+.cytat footer{margin-top:20px;font-size:16px;font-weight:500;color:var(--s);letter-spacing:0}
+.dane{background:var(--l);padding:clamp(24px,3vw,40px)}
+.dane h3{font-size:22px}
+.dane ul{margin:16px 0 0;padding:0;list-style:none}
+.dane li{padding:12px 0;border-top:1px solid var(--line)}
+.dane .fakt{margin-top:20px;font-size:15px;color:var(--s)}
+.dane .btn{margin-top:24px}
+
+/* o firmie */
+.mlyn{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:40px 72px;align-items:center}
+.mlyn figure{margin:0;position:relative}
+.mlyn figure img{width:100%;aspect-ratio:600/401;object-fit:cover}
+.mlyn figcaption{font-size:13px;color:var(--s);margin-top:10px}
+.mlyn .tekst p{margin-top:18px;font-size:18px;color:var(--t);max-width:56ch}
+.mlyn .tekst .podpis{font-weight:700;color:var(--k);margin-top:24px}
+
+/* pytania */
+.faq{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:24px 64px}
+.faq details{border-top:1px solid var(--line)}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;padding:22px 48px 22px 0;font-weight:700;font-size:19px;color:var(--k);position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";position:absolute;right:12px;top:50%;width:12px;height:12px;border-right:3px solid var(--rb);border-bottom:3px solid var(--rb);transform:translateY(-70%) rotate(45deg);transition:transform .2s}
+.faq details[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
+.faq details p{padding:0 0 22px;color:var(--s);max-width:66ch}
+
+/* kontakt */
+.kont{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:40px 72px}
+.kont .dk p{margin-top:16px;color:var(--s)}
+.dk dl{margin:28px 0 0;display:grid;gap:18px}
+.dk dt{font-size:14px;color:var(--s)}
+.dk dd{margin:2px 0 0;font-weight:700;font-size:19px;color:var(--k)}
+.dk dd a{text-decoration:none}
+.dk dd a:hover{color:var(--rb)}
+form{background:#fff;padding:clamp(22px,3vw,40px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}
+form label{display:grid;gap:6px;font-size:14px;font-weight:600;color:var(--k)}
+form .cala{grid-column:1/-1}
+input,textarea,select{font:inherit;font-size:16px;padding:13px 14px;border:1px solid #C5CBD3;border-radius:3px;background:#fff;color:var(--t);width:100%}
+textarea{min-height:120px;resize:vertical}
+form .btn{justify-self:start}
+.uwaga{font-size:13px;color:var(--s)}
+.mapa{margin-top:28px;aspect-ratio:16/10;background:#E3E7EC;position:relative}
+.mapa iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+/* stopka */
+.stopka{background:var(--dk);color:#AEB4BC;padding:48px 0 28px;font-size:15px}
+.stopka .wrap{display:grid;grid-template-columns:minmax(0,1.3fr) repeat(2,minmax(0,1fr));gap:28px 40px}
+.stopka img{width:130px;height:auto}
+.stopka b{color:#fff;font-weight:600;display:block;margin-bottom:6px}
+.stopka a{text-decoration:none}
+.stopka a:hover{color:#fff}
+.stopka .dol{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;align-items:center;border-top:1px solid #2A2D32;padding-top:22px;margin-top:8px;font-size:14px}
+
+/* pasek mobilny */
+.mob{display:none}
+
+@media (max-width:1180px){
+  .pas{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .nav a{padding:10px 9px}
+}
+@media (max-width:980px){
+  .nav,.top .tel{display:none}
+  .burg{display:block}
+  .menu-open .nav{display:flex;position:fixed;top:var(--hh);left:0;right:0;flex-direction:column;background:#fff;padding:12px var(--gut) 24px;border-bottom:1px solid var(--line);box-shadow:0 18px 30px rgba(0,0,0,.08);gap:0}
+  .menu-open .nav a{font-size:20px;padding:14px 0;border-bottom:1px solid var(--line);border-radius:0}
+  .menu-open .nav .mtel{display:flex}
+  .glowa,.pom,.licz,.mlyn,.faq,.kont,.etapy{grid-template-columns:minmax(0,1fr)}
+  .kroki{grid-template-columns:minmax(0,1fr);border-top:0}
+  .krok,.krok+.krok{padding:22px 0 22px 34px;border-top:1px solid var(--line)}
+  .krok::before,.krok+.krok::before{content:"";position:absolute;left:8px;top:24px;width:3px;height:30px;background:var(--r);transform:rotate(14deg)}
+  .ciemna .duzy-mk{opacity:.6}
+  .stopka .wrap{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .stopka .wrap>div:first-child{grid-column:1/-1}
+}
+.nav .mtel{display:none;align-items:center;gap:10px;font-weight:800;color:var(--k)}
+@media (max-width:760px){
+  :root{--hh:64px}
+  .logo img{width:122px}
+  body{font-size:16px}
+  .hero{align-items:stretch}
+  .hero picture img{object-position:50% 30%}
+  .hero::before{background:linear-gradient(0deg,rgba(10,12,16,.86) 0%,rgba(10,12,16,.62) 42%,rgba(10,12,16,.08) 70%,rgba(10,12,16,0) 100%)}
+  .ciecie{display:none}
+  .hero-in{display:flex;flex-direction:column;justify-content:flex-end;padding:28px 0 32px;width:calc(100% - 2*var(--gut))}
+  .hero h1{font-size:clamp(34px,10vw,44px);max-width:none}
+  .hero .lead{font-size:17px;margin-top:14px}
+  .hero .btn{margin-top:24px;align-self:flex-start}
+  .hero .gdzie{margin-top:14px;font-size:14px}
+  .pas{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;margin-inline:calc(-1*var(--gut));padding:0 var(--gut) 6px;scroll-padding:0 var(--gut);scrollbar-width:none}
+  .pas::-webkit-scrollbar{display:none}
+  .karta{flex:0 0 84%;scroll-snap-align:start}
+  .etapy ol{columns:1}
+  .cytat{padding-left:30px}
+  .cytat::before{left:6px;transform:skewX(-6deg)}
+  form{grid-template-columns:minmax(0,1fr)}
+  .mob{display:grid;grid-template-columns:1fr 1.4fr;position:fixed;left:0;right:0;bottom:0;z-index:40;transform:translateY(110%);transition:transform .3s}
+  .mob.widac{transform:none}
+  .mob a{display:flex;align-items:center;justify-content:center;gap:8px;padding:15px 8px;font-weight:700;text-decoration:none;font-size:16px}
+  .mob .z{background:#fff;color:var(--k);border-top:1px solid var(--line)}
+  .mob .w{background:var(--rb);color:#fff}
+  .stopka{padding-bottom:80px}
+}
+@media (max-width:760px) and (max-height:700px){
+  .hero h1{font-size:clamp(30px,9vw,38px)}
+  .hero .lead{font-size:16px}
+}
+@media (min-width:761px) and (max-height:820px){
+  .hero h1{font-size:clamp(40px,4.6vw,70px)}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+.wylinka-badge{display:inline-flex;align-items:center;gap:.4em;color:inherit;text-decoration:none;font-size:.875em;line-height:1;opacity:.85}
+.wylinka-badge:hover,.wylinka-badge:focus-visible{opacity:1}
+.wylinka-badge:focus-visible{outline:2px solid currentColor;outline-offset:3px;border-radius:2px}
+.wylinka-badge svg{width:18px;height:18px;flex:none;overflow:visible}
+.wylinka-badge b{font-weight:600}
+.wylinka-badge .wy-old{opacity:.45;transform-origin:40px 30px;transition:transform .32s cubic-bezier(.3,.7,.4,1),opacity .32s ease-out}
+.wylinka-badge .wy-pod{opacity:0;transition:opacity .2s ease-out .08s}
+.wylinka-badge:hover .wy-old,.wylinka-badge:focus-visible .wy-old{transform:translate(9px,7px) rotate(9deg);opacity:0}
+.wylinka-badge:hover .wy-pod,.wylinka-badge:focus-visible .wy-pod{opacity:1}
+@media (prefers-reduced-motion:reduce){.wylinka-badge .wy-old,.wylinka-badge .wy-pod{transition:none}.wylinka-badge:hover .wy-old,.wylinka-badge:focus-visible .wy-old{transform:none;opacity:.45}.wylinka-badge:hover .wy-pod,.wylinka-badge:focus-visible .wy-pod{opacity:0}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <mask id="mkm" maskUnits="userSpaceOnUse" x="0" y="0" width="110" height="200"><rect width="110" height="200" fill="#fff"/><path d="M45 40H80L64 95H87L53 156L60 115H37Z" fill="#000"/></mask>
+    <symbol id="mk" viewBox="0 0 110 200"><circle cx="58" cy="100" r="47" fill="currentColor" mask="url(#mkm)"/><path d="M62 0H65.5L47.5 56H42.5ZM51 151L56.5 150L24 200H21Z" fill="currentColor"/></symbol>
+  </defs>
+</svg>
+
+<header class="top" id="top">
+  <div class="wrap">
+    <a class="logo" href="#" aria-label="inVolte - strona główna"><img src="img/logo.webp" width="600" height="237" alt="inVolte"></a>
+    <nav class="nav" id="nav" aria-label="Menu">
+      <a href="#oferta">Oferta</a>
+      <a href="#pomiary">Pomiary i odbiory</a>
+      <a href="#jak">Jak pracujemy</a>
+      <a href="#o-firmie">O firmie</a>
+      <a href="#pytania">Pytania</a>
+      <a href="#kontakt">Kontakt</a>
+      <a class="mtel" href="tel:+48570083207">Zadzwoń: 570 083 207</a>
+    </nav>
+    <a class="tel" href="tel:+48570083207"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" d="M6.5 3h3l1.6 4.6-2.2 1.6a12 12 0 0 0 5.9 5.9l1.6-2.2L21 14.5v3A2.5 2.5 0 0 1 18.5 20 15.5 15.5 0 0 1 4 5.5 2.5 2.5 0 0 1 6.5 3z"/></svg>570 083 207</a>
+    <button class="burg" id="burg" aria-label="Otwórz menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="start">
+  <picture>
+    <source media="(max-width:760px)" srcset="img/dom-mob-480.webp 480w, img/dom-mob-640.webp 640w, img/dom-mob-780.webp 780w" sizes="100vw" width="780" height="1080">
+    <img src="img/dom-1614.webp" srcset="img/dom-1024.webp 1024w, img/dom-1614.webp 1614w" sizes="100vw" width="1614" height="1080" alt="Dom jednorodzinny z instalacją fotowoltaiczną na dachu" fetchpriority="high" decoding="async">
+  </picture>
+  <div class="wrap hero-in">
+    <h1>Prąd „znikąd” - prosto z&nbsp;Twojego dachu</h1>
+    <p class="lead">Projektujemy, montujemy i serwisujemy instalacje fotowoltaiczne dla domów i firm. Wykonujemy też pomiary i odbiory instalacji elektrycznych.</p>
+    <a class="btn" href="#kontakt"><svg aria-hidden="true"><use href="#mk" style="color:#fff"/></svg>Zapytaj o wycenę instalacji</a>
+    <p class="gdzie">Swarzędz, Dominowo - projekt, montaż, serwis</p>
+  </div>
+</section>
+
+<section class="sek" id="oferta">
+  <div class="wrap">
+    <div class="glowa">
+      <h2>Od projektu po uruchomienie instalacji</h2>
+      <p>Jedna firma prowadzi całą inwestycję: dobiera moduły i falownik, przygotowuje dokumentację, montuje, zgłasza instalację do operatora sieci i zostaje na serwis.</p>
+    </div>
+    <div class="pas" id="pas">
+      <article class="karta">
+        <div class="fot"><img src="img/montaz-500.webp" width="500" height="500" loading="lazy" decoding="async" alt="Montaż modułów fotowoltaicznych na dachu"></div>
+        <div class="tx"><h3>Instalacje dla domów</h3><p>Mikroinstalacje na dachu skośnym lub płaskim, dopasowane do rocznego zużycia prądu w domu.</p>
+          <ul><li>dachówka, blachodachówka, blacha, papa</li><li>zgłoszenie do zakładu energetycznego</li></ul></div>
+      </article>
+      <article class="karta">
+        <div class="fot"><img src="img/farma-600.webp" srcset="img/farma-600.webp 600w, img/farma-800.webp 800w, img/farma-1200.webp 1200w" sizes="(max-width:760px) 84vw, (max-width:1180px) 46vw, 300px" width="600" height="407" loading="lazy" decoding="async" alt="Instalacja fotowoltaiczna na gruncie"></div>
+        <div class="tx"><h3>Dachy firm i farmy</h3><p>Duże instalacje na halach, elewacjach i na gruncie - od analizy lokalizacji po testy i uruchomienie.</p>
+          <ul><li>pozwolenia i warunki przyłączenia</li><li>projekt wykonawczy i budowa</li></ul></div>
+      </article>
+      <article class="karta">
+        <div class="fot"><img src="img/projekt-600.webp" srcset="img/projekt-600.webp 600w, img/projekt-800.webp 800w, img/projekt-1200.webp 1200w" sizes="(max-width:760px) 84vw, (max-width:1180px) 46vw, 300px" width="600" height="369" loading="lazy" decoding="async" alt="Rząd modułów fotowoltaicznych o zachodzie słońca"></div>
+        <div class="tx"><h3>Projekt i dokumentacja</h3><p>Dobór modułów i falownika, analiza zacienienia, kosztorys i analiza opłacalności inwestycji.</p>
+          <ul><li>łączenie modułów w łańcuchy</li><li>dokumenty do finansowania</li></ul></div>
+      </article>
+      <article class="karta">
+        <div class="fot"><img src="img/serwis-600.webp" srcset="img/serwis-600.webp 600w, img/serwis-800.webp 800w, img/serwis-1200.webp 1200w" sizes="(max-width:760px) 84vw, (max-width:1180px) 46vw, 300px" width="600" height="400" loading="lazy" decoding="async" alt="Serwisant przy rzędzie modułów fotowoltaicznych"></div>
+        <div class="tx"><h3>Serwis i mycie modułów</h3><p>Instalacja jest praktycznie bezobsługowa. Raz lub dwa razy w roku warto umyć moduły - tym też się zajmujemy.</p>
+          <ul><li>serwis gwarancyjny i pogwarancyjny</li><li>przeglądy i pomiary</li></ul></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sek ciemna" id="pomiary">
+  <svg class="duzy-mk" viewBox="0 0 110 200" aria-hidden="true"><use href="#mk"/></svg>
+  <div class="wrap pom">
+    <div class="opis">
+      <h2>Pomiary i odbiory instalacji elektrycznych</h2>
+      <p>Sprawdzamy instalacje w domach, biurach i zakładach. Protokoły przygotowujemy tak, żeby spokojnie przeszły kontrolę.</p>
+      <p class="inst">PIP, Sanepid, Straż Pożarna</p>
+    </div>
+    <ul class="lista-pom">
+      <li><span class="sl"></span><div><h3>Ochrona przeciwporażeniowa</h3><p>Skuteczność samoczynnego wyłączenia zasilania - czy dotknięcie obudowy nie grozi porażeniem.</p></div></li>
+      <li><span class="sl"></span><div><h3>Rezystancja izolacji</h3><p>Obwody jedno- i trójfazowe. Stan izolacji decyduje o bezpieczeństwie ludzi i ochronie przed pożarem.</p></div></li>
+      <li><span class="sl"></span><div><h3>Wyłączniki różnicowoprądowe</h3><p>Czy wyłącznik zadziała przy właściwym prądzie i czy napięcie dotykowe mieści się w normie.</p></div></li>
+      <li><span class="sl"></span><div><h3>Uziemienie i instalacja odgromowa</h3><p>Rezystancja uziemienia - okresowo, bo korozja i grunt zmieniają parametry.</p></div></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sek szara" id="jak">
+  <div class="wrap">
+    <div class="glowa">
+      <h2>Jak pracujemy</h2>
+      <p>Dobrze zaprojektowana instalacja szybciej się zwraca, jest wydajniejsza i trwalsza. Dlatego zaczynamy od projektu, a nie od katalogu paneli.</p>
+    </div>
+    <div class="kroki">
+      <div class="krok"><h3>Projekt</h3><p>Rozwiązanie zaprojektowane pod Twoje zużycie, dach i kierunek połaci.</p></div>
+      <div class="krok"><h3>Przygotowanie</h3><p>Dobór podzespołów do zaprojektowanej architektury, żeby instalacja pracowała wydajnie przez lata.</p></div>
+      <div class="krok"><h3>Wykonanie</h3><p>Montaż z dbałością o szczegóły, uruchomienie i zgłoszenie do operatora sieci.</p></div>
+    </div>
+    <div class="etapy">
+      <h3>Co obejmuje projekt instalacji</h3>
+      <ol>
+        <li>Zdjęcie lokalizacji - lokalne lub satelitarne</li>
+        <li>Rozmieszczenie i dobór modułów</li>
+        <li>Analiza zacienienia</li>
+        <li>Łączenie modułów w łańcuchy - analiza techniczna i elektryczna</li>
+        <li>Dobór falownika do typu instalacji</li>
+        <li>Kosztorys</li>
+        <li>Analiza ekonomiczna i czas zwrotu</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="sek" id="liczymy">
+  <div class="wrap licz">
+    <blockquote class="cytat">Rzetelna analiza opłacalności - bez egzaltacji dotacjami, nadmiernego optymizmu i nieuzasadnionych szacunków uzysku.
+      <footer>Tak liczymy każdą wycenę i każdy projekt.</footer></blockquote>
+    <div class="dane">
+      <h3>Do wyceny wystarczą</h3>
+      <ul>
+        <li>typ dachu i pokrycie</li>
+        <li>wymiary dachu i kierunek połaci</li>
+        <li>roczne zużycie prądu - najlepiej rachunki z ostatniego roku</li>
+      </ul>
+      <p class="fakt">Dobrze ustawiona instalacja w Polsce daje ok. 900-1000 kWh rocznie z każdego kWp mocy.</p>
+      <a class="btn" href="#kontakt"><svg aria-hidden="true"><use href="#mk" style="color:#fff"/></svg>Wyślij dane do wyceny</a>
+    </div>
+  </div>
+</section>
+
+<section class="sek szara" id="o-firmie">
+  <div class="wrap mlyn">
+    <figure>
+      <img src="img/mlyn-600.webp" width="600" height="401" loading="lazy" decoding="async" alt="Dawny młyn w Jaraczu nad Wełną">
+      <figcaption>Młyn w Jaraczu. Fot. Muzeum Młynarstwa w Jaraczu</figcaption>
+    </figure>
+    <div class="tekst">
+      <h2>Skąd prąd „znikąd”</h2>
+      <p>W latach 20. w młynie w Jaraczu nad Wełną zamontowano turbinę Siemens-Halske. Młynarzem był szwagier mojego dziadka. Jeszcze w latach 70. oglądałem, jak ta turbina - wtedy już ponad 50 lat - dawała prąd całej wsi.</p>
+      <p>Ze słońcem jest podobnie jak z wodą: jest i będzie. Warto raz dobrze zainwestować i mieć własny prąd na kolejne dekady - bez względu na pogodę klimatyczną i polityczną.</p>
+      <p class="podpis">Arek Witt, inVolte</p>
+    </div>
+  </div>
+</section>
+
+<section class="sek" id="pytania">
+  <div class="wrap faq">
+    <h2>Pytania przed decyzją</h2>
+    <div>
+      <details open><summary>Czy instalacja na dachu wymaga pozwolenia na budowę?</summary><p>Moduły na dachu domu zwykle nie wymagają pozwolenia ani zgłoszenia, jeśli konstrukcja nie przekracza 3 m wysokości. Przy większych instalacjach i na gruncie sprawdzamy wymagania w projekcie.</p></details>
+      <details><summary>Ile prądu wyprodukuje instalacja?</summary><p>Dla rzetelnych szacunków przyjmujemy 900-920 kWh rocznie z 1 kWp przy dobrym ustawieniu. Około trzech czwartych energii powstaje między kwietniem a wrześniem.</p></details>
+      <details><summary>Co, jeśli dach nie jest skierowany na południe?</summary><p>Instalacja na połaci wschód-zachód też ma sens - uzysk jest niższy niż przy idealnym ustawieniu, ale różnicę liczymy w projekcie dla konkretnego dachu.</p></details>
+      <details><summary>Czym różnią się panele fotowoltaiczne od kolektorów?</summary><p>Kolektory grzeją wodę i pracują głównie latem. Panele fotowoltaiczne produkują prąd przez cały rok, także przy zachmurzeniu - wtedy po prostu mniej.</p></details>
+      <details><summary>Jakie dane przygotować do wyceny?</summary><p>Typ i pokrycie dachu, jego wymiary i kierunek oraz roczne zużycie prądu z rachunków. Na tej podstawie dobieramy moc i podajemy orientacyjną cenę.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="sek szara" id="kontakt">
+  <div class="wrap kont">
+    <div class="dk">
+      <h2>Porozmawiajmy o Twoim dachu</h2>
+      <p>Opisz krótko budynek i zużycie prądu - odpowiemy z wstępną mocą i orientacyjną ceną instalacji.</p>
+      <dl>
+        <div><dt>Telefon</dt><dd><a href="tel:+48570083207">570 083 207</a></dd></div>
+        <div><dt>E-mail</dt><dd><a href="mailto:involte@involte.pl">involte@involte.pl</a></dd></div>
+        <div><dt>Adresy</dt><dd>Gwiaździsta 57, Swarzędz<br>Akacjowa 8, Dominowo</dd></div>
+      </dl>
+    </div>
+    <div>
+      <form id="form" novalidate>
+        <label>Imię i nazwisko<input name="n" autocomplete="name"></label>
+        <label>Telefon lub e-mail<input name="k" autocomplete="email"></label>
+        <label class="cala">Czego dotyczy zapytanie
+          <select name="t"><option>Instalacja na domu</option><option>Instalacja dla firmy lub farma</option><option>Pomiary i odbiory instalacji</option><option>Serwis instalacji</option></select></label>
+        <label class="cala">Wiadomość<textarea name="w" placeholder="Np. dach dwuspadowy, dachówka, ok. 4000 kWh rocznie"></textarea></label>
+        <button class="btn cala" type="submit"><svg aria-hidden="true"><use href="#mk" style="color:#fff"/></svg>Wyślij zapytanie</button>
+        <p class="uwaga cala" id="komunikat">Podgląd projektu - formularz nie wysyła jeszcze wiadomości.</p>
+      </form>
+      <div class="mapa" id="mapa" data-src="https://maps.google.com/maps?q=Gwia%C5%BAdzista%2057%2C%20Swarz%C4%99dz&amp;z=14&amp;hl=pl&amp;output=embed"></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="stopka">
+  <div class="wrap">
+    <div><img src="img/logo-biale.webp" width="600" height="237" alt="inVolte" loading="lazy"><p style="margin-top:14px;max-width:34ch">Fotowoltaika: projekt, montaż, doradztwo, serwis. Pomiary i odbiory instalacji elektrycznych.</p></div>
+    <div><b>Kontakt</b><a href="tel:+48570083207">570 083 207</a><br><a href="mailto:involte@involte.pl">involte@involte.pl</a></div>
+    <div><b>Adresy</b>Gwiaździsta 57, Swarzędz<br>Akacjowa 8, Dominowo</div>
+    <div class="dol"><span>© 2026 inVolte</span><a class="wylinka-badge" href="https://wylinka.pl/?utm_source=involte.pl&amp;utm_medium=stopka&amp;utm_campaign=wykonanie" rel="noopener" title="Strona wykonana przez Wylinka"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false" fill="currentColor"><path d="M9.8 22.8l-1.2-7.9 2.2-3.7 15.5 4.6-.5 1.5-7.2 5.5 4.7 15.6 5-15.6 7 0 4.1 12.7-4.2-.9-2.6 1.8-.8-2.2-5.3 15.6-4.3 0 .4 .2-2.1 2.8-1.3-1.1 1.1-1.4-3.1 .2-.1-1.7 2.2-.1-5.7-16.5-4.8 .6-.8 3.1 0 .5-.3 .5 .8 2.2-1.6 .5-.4-1.3-.8 1.6-1.5-.8 .8-1.6-1.4 .6-.6-1.6 2.3-.8 .2-.4 1.3-4.8 5.9-.8-2.4-6.9zM15.2 13.7l-.1-.4-.4 .8-.1 .8 .1 1 .1 .4 .3 .7 .3-.9 .1-.7 0-.8z"/><path class="wy-pod" d="M37.1 49.8l-4.5-13.3 2.6-1.8 4.2 .9 .9 2.8 3-9.7 0-.5 .1-.8 3.2-8.4 .5-1 .6-1 .9-1.1 1.3-1 1.1-.7 1.4-.5 1.4-.3 .7 0 .9 0 1.2 .3 1.4 .6 .8 .5 .7 .7 .6 .7 .5 .9 .3 .9 .1 .9 0 .8-.2 .9-.5 .9-.5 .6-.7 .5-.7 .3-.1-.1 0-.1 .5-.5 .3-.7 .2-.5 0-.6-.1-.6-.3-.7-.4-.5-.4-.4-.5-.3-.6-.3-.7 0-.7 .1-.6 .1-.5 .4-.5 .5-.3 .5-.2 .7-.1 1.5-1.4 5.1-.8 3.3-.3 .7-.5 .7-6 17.5 1.9 .1-.1 1.7-3.1-.2 1.1 1.4-1.3 1.1-2.1-2.8 .4-.2z"/><path class="wy-old" d="M40.8 50l.4-.2-4.1 0-4.2-12.5 2.5-1.7 4.3 .9 .6 1.9 .6-1.6 0-.3 2.4-7.8 0-.5 .1-.8 3.2-8.4 .4-.8 .6-.9 .9-1.2 .9-.9 1.3-.8 1.4-.6 1.2-.3 1.4-.1 1.3 .1 .6 .2 .8 .3 1.1 .6 .9 .7 .7 .9 .5 .9 .3 .9 .1 1.1-.1 .9-.3 .9-.4 .7-.6 .7-.6 .4-.6 .2-.1-.1 0-.1 .5-.5 .3-.7 .2-.5 0-.5-.1-.6-.2-.6-.3-.5-.4-.5-.5-.3-.6-.3-.7-.1-.6 0-.6 .1-.6 .3-.6 .5-.3 .4-.2 .5-.1 .5-.1 1.5-1.4 5.1-.8 3.3-.3 .7-.5 .7-6 17.5 1.9 .1-.1 1.7-3.1-.2 1.1 1.4-1.3 1.1zM49.6 17.1l.6 1.7-1.5 1.9 .4 .4 1.8-2.1-.7-2.1zM48.1 28.3l.5 1.8-1.7 1.8 .4 .4 1.9-2-.6-2.2zM37.9 41.7l1.7-1.5-.4-.4-1.7 1.4zM42.6 38.7l-1.5 2.8 1.1 2-1.3 2.6 .5 .2 1.5-2.8-1.1-2 1.4-2.5z"/></svg><span>wykonanie: <b>Wylinka</b></span></a></div>
+  </div>
+</footer>
+
+<div class="mob" id="mob"><a class="z" href="tel:+48570083207">Zadzwoń</a><a class="w" href="#kontakt">Zapytaj o wycenę</a></div>
+<script src="app.js" defer></script>
+</body>
+</html>
