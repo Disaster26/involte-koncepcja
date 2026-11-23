@@ -1,2 +1,5 @@
 User-agent: *
-Disallow: /
+Allow: /
+Disallow: /formularz.php
+
+Sitemap: https://involte.pl/sitemap.xml

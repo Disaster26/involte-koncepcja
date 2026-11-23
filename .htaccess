@@ -1,0 +1,126 @@
+Options -Indexes -MultiViews
+DirectoryIndex index.html
+ErrorDocument 404 /404.html
+AddDefaultCharset UTF-8
+
+RewriteEngine On
+RewriteBase /
+
+# jedna wersja adresu: https://involte.pl (bez www)
+RewriteCond %{HTTP_HOST} ^www\.involte\.pl$ [NC]
+RewriteRule ^ http://involte.pl%{REQUEST_URI} [R=301,L]
+#HTTPS RewriteCond %{HTTPS} !=on
+#HTTPS RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+#HTTPS RewriteCond %{HTTP_HOST} ^involte\.pl$ [NC]
+#HTTPS RewriteRule ^ https://involte.pl%{REQUEST_URI} [R=301,L]
+
+# stare adresy WordPressa (?page_id=, ?p=)
+RewriteCond %{QUERY_STRING} (^|&)(page_id|p)=106(&|$)
+RewriteRule ^(index\.php)?$ /? [R=301,L]
+RewriteCond %{QUERY_STRING} (^|&)(page_id|p)=117(&|$)
+RewriteRule ^(index\.php)?$ /kontakt/? [R=301,L]
+RewriteCond %{QUERY_STRING} (^|&)(page_id|p)=790(&|$)
+RewriteRule ^(index\.php)?$ /co-i-jak/? [R=301,L]
+RewriteCond %{QUERY_STRING} (^|&)(page_id|p)=815(&|$)
+RewriteRule ^(index\.php)?$ /czy-mozna-w-polsce/? [R=301,L]
+RewriteCond %{QUERY_STRING} (^|&)(page_id|p)=823(&|$)
+RewriteRule ^(index\.php)?$ /czy-to-sie-oplaca/? [R=301,L]
+RewriteCond %{QUERY_STRING} (^|&)(page_id|p)=832(&|$)
+RewriteRule ^(index\.php)?$ /dlaczego-fotowoltaika/? [R=301,L]
+RewriteCond %{QUERY_STRING} (^|&)(page_id|p)=834(&|$)
+RewriteRule ^(index\.php)?$ /dotacje-w-programie-prosument/? [R=301,L]
+RewriteCond %{QUERY_STRING} (^|&)(page_id|p)=837(&|$)
+RewriteRule ^(index\.php)?$ /duze-instalacje-fotowoltaiczne/? [R=301,L]
+RewriteCond %{QUERY_STRING} (^|&)(page_id|p)=839(&|$)
+RewriteRule ^(index\.php)?$ /ile-to-kosztuje/? [R=301,L]
+RewriteCond %{QUERY_STRING} (^|&)(page_id|p)=841(&|$)
+RewriteRule ^(index\.php)?$ /mikro-i-male-instalacje/? [R=301,L]
+RewriteCond %{QUERY_STRING} (^|&)(page_id|p)=843(&|$)
+RewriteRule ^(index\.php)?$ /o-nas/? [R=301,L]
+RewriteCond %{QUERY_STRING} (^|&)(page_id|p)=845(&|$)
+RewriteRule ^(index\.php)?$ /pomiary-i-odbiory-instalacji/? [R=301,L]
+RewriteCond %{QUERY_STRING} (^|&)(page_id|p)=847(&|$)
+RewriteRule ^(index\.php)?$ /prad-ze-slonca/? [R=301,L]
+RewriteCond %{QUERY_STRING} (^|&)(page_id|p)=852(&|$)
+RewriteRule ^(index\.php)?$ /projektowanie-i-przygotowanie-dokumentacji/? [R=301,L]
+RewriteCond %{QUERY_STRING} (^|&)(page_id|p)=854(&|$)
+RewriteRule ^(index\.php)?$ /projektowanie-i-przygotowanie-dokumentacji/? [R=301,L]
+RewriteCond %{QUERY_STRING} (^|&)(page_id|p)=856(&|$)
+RewriteRule ^(index\.php)?$ /pytania-i-odpowiedzi/? [R=301,L]
+RewriteCond %{QUERY_STRING} (^|&)(page_id|p)=890(&|$)
+RewriteRule ^(index\.php)?$ /nasze-realizacje/? [R=301,L]
+RewriteCond %{QUERY_STRING} (^|&)(page_id|p)=904(&|$)
+RewriteRule ^(index\.php)?$ /cennik/? [R=301,L]
+RewriteCond %{QUERY_STRING} (^|&)(page_id|p)=169(&|$)
+RewriteRule ^(index\.php)?$ /nasze-realizacje/? [R=301,L]
+RewriteCond %{QUERY_STRING} (^|&)(page_id|p)=182(&|$)
+RewriteRule ^(index\.php)?$ /nasze-realizacje/? [R=301,L]
+RewriteCond %{QUERY_STRING} (^|&)(page_id|p)=183(&|$)
+RewriteRule ^(index\.php)?$ /nasze-realizacje/? [R=301,L]
+RewriteCond %{QUERY_STRING} (^|&)(page_id|p)=184(&|$)
+RewriteRule ^(index\.php)?$ /nasze-realizacje/? [R=301,L]
+RewriteCond %{QUERY_STRING} (^|&)(page_id|p)=185(&|$)
+RewriteRule ^(index\.php)?$ /nasze-realizacje/? [R=301,L]
+RewriteCond %{QUERY_STRING} (^|&)(page_id|p)=186(&|$)
+RewriteRule ^(index\.php)?$ /nasze-realizacje/? [R=301,L]
+RewriteCond %{QUERY_STRING} (^|&)(page_id|p)=187(&|$)
+RewriteRule ^(index\.php)?$ /nasze-realizacje/? [R=301,L]
+RewriteCond %{QUERY_STRING} (^|&)(page_id|p)=188(&|$)
+RewriteRule ^(index\.php)?$ /nasze-realizacje/? [R=301,L]
+RewriteCond %{QUERY_STRING} (^|&)(page_id|p)=189(&|$)
+RewriteRule ^(index\.php)?$ /nasze-realizacje/? [R=301,L]
+RewriteCond %{QUERY_STRING} (^|&)(page_id|p|post_type|portfolio|portfolio-category|author|cat|attachment_id)=
+RewriteRule ^(index\.php)?$ /? [R=301,L]
+RewriteRule ^index\.php$ / [R=301,L]
+
+RewriteRule ^home-1/?$ / [R=301,L,NC]
+RewriteRule ^projektowanie/?$ /projektowanie-i-przygotowanie-dokumentacji/ [R=301,L,NC]
+RewriteRule ^certyfikaty/?$ /o-nas/ [R=301,L,NC]
+RewriteRule ^dotacje/?$ /dotacje-w-programie-prosument/ [R=301,L,NC]
+RewriteRule ^panele-fotowoltaiczne-cena/?$ /ile-to-kosztuje/ [R=301,L,NC]
+RewriteRule ^polityka-cookies/?$ /polityka-prywatnosci/ [R=301,L,NC]
+RewriteRule ^wspolpraca/?$ /kontakt/ [R=301,L,NC]
+RewriteRule ^portfolio(-category)?(/.*)?$ /nasze-realizacje/ [R=301,L,NC]
+RewriteRule ^countdown(/.*)?$ / [R=301,L,NC]
+RewriteRule ^author(/.*)?$ /o-nas/ [R=301,L,NC]
+RewriteRule ^(comments/)?feed/?$ / [R=301,L,NC]
+RewriteRule ^(.+)/feed/?$ /$1/ [R=301,L,NC]
+RewriteRule ^(wp-sitemap.*|sitemap_index|page-sitemap|post-sitemap)\.xml$ /sitemap.xml [R=301,L,NC]
+# pozostalosci WordPressa: 410
+RewriteRule ^(wp-admin|wp-includes|wp-content|wp-json)(/.*)?$ - [G,L,NC]
+RewriteRule ^(wp-login|xmlrpc|wp-cron|wp-config)\.php$ - [G,L,NC]
+
+<FilesMatch "^\.">
+  Require all denied
+</FilesMatch>
+
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  <FilesMatch "\.(webp|png|jpg|svg|ico|woff2)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.(css|js)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+  <FilesMatch "\.(html|xml|txt|webmanifest)$">
+    Header set Cache-Control "public, max-age=600"
+  </FilesMatch>
+</IfModule>
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType text/html "access plus 10 minutes"
+</IfModule>
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/javascript application/json application/xml image/svg+xml application/manifest+json
+</IfModule>
+AddType application/manifest+json .webmanifest
+AddType font/woff2 .woff2
+AddType image/webp .webp
