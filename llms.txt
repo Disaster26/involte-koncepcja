@@ -1,11 +1,11 @@
 # inVolte - fotowoltaika Swarzędz
 
-> inVolte Arkadiusz Witt: instalacje fotowoltaiczne dla domów i firm (projekt, dokumentacja, montaż, serwis) oraz pomiary i odbiory instalacji elektrycznych. Swarzędz (Gwiaździsta 57) i Dominowo (Akacjowa 8), Wielkopolska. Tel. 570 083 207, involte@involte.pl.
+> inVolte Arkadiusz Witt: instalacje fotowoltaiczne dla domów i firm (projekt, dokumentacja, montaż, serwis) oraz serwis instalacji (gwarancyjny i pogwarancyjny, przeglądy, mycie modułów). Siedziba: Gwiaździsta 57, Swarzędz; także Akacjowa 8, Dominowo. Wielkopolska. Tel. 570 083 207, involte@involte.pl.
 
 ## Strony
 
 - [Strona główna](https://involte.pl/): Fotowoltaika Swarzędz - projekt, montaż i serwis instalacji
-- [O nas](https://involte.pl/o-nas/): inVolte Arka Witta: instalacje fotowoltaiczne, projekty i pomiary elektryczne. Swarzędz i Dominowo. Historia prądu „znikąd” z młyna w Jaraczu.
+- [O nas](https://involte.pl/o-nas/): inVolte Arka Witta: instalacje fotowoltaiczne, projekty, montaż i serwis. Swarzędz i Dominowo. Historia prądu „znikąd” z młyna w Jaraczu.
 - [Co i jak, czyli z czego składa się instalacja](https://involte.pl/co-i-jak/): Moduły, falownik, system montażu i akcesoria: z czego składa się instalacja fotowoltaiczna i od czego zależy jej trwałość. Fotowoltaika Swarzędz - inVolte.
 - [Dlaczego fotowoltaika?](https://involte.pl/dlaczego-fotowoltaika/): Korzyści z instalacji fotowoltaicznej: niższe rachunki, niskie koszty eksploatacji, zero emisji, produkcja także w pochmurny dzień. Fotowoltaika Swarzędz - inVolte.
 - [Czy fotowoltaika ma sens w Polsce?](https://involte.pl/czy-mozna-w-polsce/): Nasłonecznienie w Polsce wynosi 1050-1150 kWh/m² rocznie - prawie tyle co w Niemczech. Mapy nasłonecznienia Europy i Polski. Fotowoltaika Swarzędz - inVolte.
@@ -15,9 +15,9 @@
 - [Projektowanie i dokumentacja instalacji fotowoltaicznych](https://involte.pl/projektowanie-i-przygotowanie-dokumentacji/): Projekt instalacji fotowoltaicznej: dobór modułów i falownika, analiza zacienienia, kosztorys i analiza opłacalności. Fotowoltaika Swarzędz, Dominowo - inVolte.
 - [Mikro i małe instalacje fotowoltaiczne](https://involte.pl/mikro-i-male-instalacje/): Mikroinstalacje fotowoltaiczne do 40 kWp na domach: dobór mocy, komponenty znanych marek, montaż i zgłoszenie do zakładu energetycznego. Swarzędz, Dominowo - inVolte.
 - [Duże instalacje fotowoltaiczne dla firm](https://involte.pl/duze-instalacje-fotowoltaiczne/): Instalacje fotowoltaiczne na halach, elewacjach i gruncie oraz farmy fotowoltaiczne: od analizy lokalizacji po uruchomienie i serwis. Swarzędz, Dominowo - inVolte.
-- [Pomiary i odbiory instalacji elektrycznych](https://involte.pl/pomiary-i-odbiory-instalacji/): Pomiary ochrony przeciwporażeniowej, rezystancji izolacji, wyłączników różnicowoprądowych i uziemienia. Protokoły do kontroli PIP, Sanepidu, Straży. Swarzędz - inVolte.
+- [Serwis instalacji fotowoltaicznych](https://involte.pl/serwis-instalacji-fotowoltaicznych/): Serwis gwarancyjny i pogwarancyjny instalacji fotowoltaicznych, przeglądy, mycie modułów i diagnoza spadku produkcji prądu. Swarzędz i okolice - inVolte.
 - [Ile kosztuje instalacja fotowoltaiczna?](https://involte.pl/ile-to-kosztuje/): Od czego zależy cena instalacji fotowoltaicznej i co obejmuje. Wycena dopasowana do dachu i zużycia prądu. Fotowoltaika Swarzędz, Dominowo - inVolte.
 - [Dotacje w programie Prosument](https://involte.pl/dotacje-w-programie-prosument/): Jak działał program Prosument NFOŚiGW: dotacja i pożyczka na przydomowe instalacje fotowoltaiczne, przebieg realizacji krok po kroku. inVolte Swarzędz.
 - [Cennik przykładowych zestawów](https://involte.pl/cennik/): Przykładowe zestawy fotowoltaiczne 3 kW, 6 kW i 40 kW: skład zestawu i założenia wyceny. Aktualna cena po wycenie. Fotowoltaika Swarzędz - inVolte.
-- [Nasze realizacje](https://involte.pl/nasze-realizacje/): Realizacje inVolte: instalacje fotowoltaiczne na domach i budynkach firm, farmy, projekty oraz pomiary instalacji elektrycznych. Swarzędz, Dominowo.
+- [Nasze realizacje](https://involte.pl/nasze-realizacje/): Realizacje inVolte: instalacje fotowoltaiczne na domach i budynkach firm, farmy, projekty i serwis instalacji. Swarzędz, Dominowo.
 - [Kontakt](https://involte.pl/kontakt/): telefon, e-mail, adresy i formularz zapytania
