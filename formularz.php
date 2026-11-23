@@ -8,8 +8,44 @@ header('X-Robots-Tag: noindex');
 header('Cache-Control: no-store');
 
 const DO_KOGO = 'involte@involte.pl';
-const NADAWCA = 'formularz@serwer2619213.hosting-home.pl';
 const LIMIT_GODZ = 5;
+// wysylka przez uwierzytelniony SMTP skrzynki w domenie involte.pl: dane w smtp_dane.php (tylko na serwerze, nie w repo)
+// zwraca ['host' => 'ssl0.ovh.net', 'port' => 465, 'user' => 'adres@involte.pl', 'pass' => '...'];
+// bez tego pliku awaryjnie php mail() z adresu serwera
+$SMTP = is_file(__DIR__ . '/smtp_dane.php') ? (include __DIR__ . '/smtp_dane.php') : null;
+define('NADAWCA', is_array($SMTP) ? $SMTP['user'] : 'formularz@serwer2619213.hosting-home.pl');
+
+function smtp_wyslij(array $c, string $do, string $temat, string $tresc, array $nagl): bool {
+    $fp = @stream_socket_client('ssl://' . $c['host'] . ':' . (int)$c['port'], $en, $es, 15);
+    if (!$fp) return false;
+    stream_set_timeout($fp, 15);
+    $czytaj = function () use ($fp): string {
+        $o = '';
+        while (($l = fgets($fp, 1024)) !== false) { $o .= $l; if (strlen($l) < 4 || $l[3] === ' ') break; }
+        return $o;
+    };
+    $kmd = function (string $k, string $ok) use ($fp, $czytaj): bool {
+        if ($k !== '') fwrite($fp, $k . "\r\n");
+        return strncmp($czytaj(), $ok, strlen($ok)) === 0;
+    };
+    $ok = $kmd('', '220') && $kmd('EHLO involte.pl', '250') && $kmd('AUTH LOGIN', '334') && $kmd(base64_encode($c['user']), '334')
+        && $kmd(base64_encode($c['pass']), '235') && $kmd('MAIL FROM:<' . $c['user'] . '>', '250') && $kmd('RCPT TO:<' . $do . '>', '25')
+        && $kmd('DATA', '354');
+    if ($ok) {
+        $dane = implode("\r\n", array_merge(['To: <' . $do . '>', 'Subject: ' . $temat, 'Date: ' . date('r'),
+            'Message-ID: <' . bin2hex(random_bytes(10)) . '@involte.pl>'], $nagl)) . "\r\n\r\n" . $tresc;
+        $dane = str_replace("\r\n.", "\r\n..", str_replace(["\r\n", "\n"], ["\n", "\r\n"], $dane));
+        $ok = $kmd($dane . "\r\n.", '250');
+    }
+    fwrite($fp, "QUIT\r\n");
+    fclose($fp);
+    return $ok;
+}
+function wyslij(string $do, string $temat, string $tresc, array $nagl): bool {
+    global $SMTP;
+    if (is_array($SMTP)) return smtp_wyslij($SMTP, $do, $temat, $tresc, $nagl);
+    return mail($do, $temat, $tresc, implode("\r\n", $nagl));
+}
 
 function odp(bool $ok, string $blad = '', int $kod = 200): void {
     http_response_code($kod);
@@ -92,7 +128,7 @@ $tresc = "--$granica\r\nContent-Type: text/plain; charset=UTF-8\r\nContent-Trans
     . "--$granica\r\nContent-Type: text/html; charset=UTF-8\r\nContent-Transfer-Encoding: base64\r\n\r\n" . chunk_split(base64_encode($html))
     . "--$granica--\r\n";
 
-$ok = mail(DO_KOGO, '=?UTF-8?B?' . base64_encode($tytul) . '?=', $tresc, implode("\r\n", $naglowki));
+$ok = wyslij(DO_KOGO, '=?UTF-8?B?' . base64_encode($tytul) . '?=', $tresc, $naglowki);
 if (!$ok) odp(false, $blad_ogolny, 500);
 
 // potwierdzenie dla nadawcy (gdy podal e-mail)
@@ -121,7 +157,7 @@ if ($email !== '') {
     $t2 = "--$g2\r\nContent-Type: text/plain; charset=UTF-8\r\nContent-Transfer-Encoding: base64\r\n\r\n" . chunk_split(base64_encode($pt))
         . "--$g2\r\nContent-Type: text/html; charset=UTF-8\r\nContent-Transfer-Encoding: base64\r\n\r\n" . chunk_split(base64_encode($p))
         . "--$g2--\r\n";
-    @mail($email, '=?UTF-8?B?' . base64_encode('Otrzymaliśmy Twoje zapytanie - inVolte') . '?=', $t2, implode("\r\n", $n2));
+    wyslij($email, '=?UTF-8?B?' . base64_encode('Otrzymaliśmy Twoje zapytanie - inVolte') . '?=', $t2, $n2);
 }
 $lista[] = $teraz;
 @file_put_contents($plik, implode("\n", $lista), LOCK_EX);
