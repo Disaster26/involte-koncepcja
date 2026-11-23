@@ -4,6 +4,18 @@ defined('ABSPATH') || exit;
 
 // wszystkie maile strony wychodza uwierzytelnionym SMTP z adresu w domenie (SPF/DMARC)
 add_action('phpmailer_init', function ($m) {
+    // koperta (Return-Path) zawsze w domenie strony - SPF i DMARC zgodne takze przy wysylce z serwera
+    // koperta: adres serwera hostingu (home.pl przyjmuje z serwera tylko taka), naglowek From w domenie strony
+    if (defined('IV_SMTP_USER')) { $m->From = IV_SMTP_USER; $m->Sender = defined('IV_KOPERTA') ? IV_KOPERTA : IV_SMTP_USER; }
+    $m->CharSet = 'UTF-8';
+    if (!empty($GLOBALS['iv_alt'])) $m->AltBody = $GLOBALS['iv_alt'];
+    // podpis DKIM domeny strony - DMARC przechodzi niezaleznie od serwera wysylki
+    if (defined('IV_DKIM_KEY') && IV_DKIM_KEY) {
+        $m->DKIM_domain = 'involte.pl';
+        $m->DKIM_selector = defined('IV_DKIM_SELECTOR') ? IV_DKIM_SELECTOR : 'wyl1';
+        $m->DKIM_private_string = IV_DKIM_KEY;
+        $m->DKIM_identity = $m->From;
+    }
     if (!defined('IV_SMTP_HOST') || !defined('IV_SMTP_PASS') || IV_SMTP_PASS === '' || !empty($GLOBALS['iv_bez_smtp'])) return;
     $m->isSMTP();
     $m->Host = IV_SMTP_HOST;
@@ -104,9 +116,11 @@ function iv_formularz_obsluga() {
             . '<tr><td style="padding:16px 24px"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-top:1px solid #E3E7EC">'
             . $wiersz('Dotyczy', iv_h($temat)) . $wiersz('Wiadomość', $wiad !== '' ? nl2br(iv_h($wiad)) : '(bez treści)')
             . '</table></td></tr>'
+            . '<tr><td style="padding:0 24px 20px"><p style="margin:0 0 8px;font-size:15px;line-height:1.55;color:#24262A">Jeśli chcesz coś dopisać, wystarczy odpowiedzieć na tę wiadomość - trafi bezpośrednio do nas.</p>'
+            . '<p style="margin:0;font-size:15px;line-height:1.55;color:#24262A">Do wyceny instalacji przydadzą się: typ i pokrycie dachu, jego wymiary i kierunek oraz roczne zużycie prądu z rachunków.</p></td></tr>'
             . '<tr><td style="padding:14px 24px;background:#131416;color:#AEB4BC;font-size:12px;line-height:1.5">' . iv_h(iv_dane('firma')) . ' &middot; ' . $adr . '<br>'
             . '<a href="mailto:' . iv_h($mail_firmy) . '" style="color:#ffffff">' . iv_h($mail_firmy) . '</a> &middot; <a href="' . esc_url($dom . '/') . '" style="color:#ffffff">involte.pl</a></td></tr>' . $dol;
-        $GLOBALS['iv_alt'] = "Dzień dobry $imie,\notrzymaliśmy Twoją wiadomość i odpowiemy najszybciej, jak to możliwe.\nW pilnej sprawie zadzwoń: $tel.\n\ninVolte, $mail_firmy, $dom/\n";
+        $GLOBALS['iv_alt'] = "Dzień dobry $imie,\notrzymaliśmy Twoją wiadomość i odpowiemy najszybciej, jak to możliwe.\nW pilnej sprawie zadzwoń: $tel.\n\nJeśli chcesz coś dopisać, wystarczy odpowiedzieć na tę wiadomość.\nDo wyceny instalacji przydadzą się: typ i pokrycie dachu, jego wymiary i kierunek oraz roczne zużycie prądu z rachunków.\n\ninVolte, $mail_firmy, $dom/\n";
         wp_mail($email, 'Otrzymaliśmy Twoje zapytanie - inVolte', $p, ['Content-Type: text/html; charset=UTF-8', 'From: inVolte <' . (defined('IV_SMTP_USER') ? IV_SMTP_USER : get_option('admin_email')) . '>', 'Reply-To: ' . $mail_firmy]);
     }
     $GLOBALS['iv_alt'] = '';

@@ -235,7 +235,8 @@ function iv_mapa() {
 }
 
 function iv_formularz() {
-    echo '<form id="form" action="' . esc_url(admin_url('admin-ajax.php')) . '" method="post" novalidate>
+    // akcja w adresie (pole o nazwie "action" przeslanialoby form.action w skrypcie)
+    echo '<form id="form" action="' . esc_url(admin_url('admin-ajax.php?action=iv_formularz')) . '" method="post" novalidate>
         <label>Imię i nazwisko<input name="n" autocomplete="name" required></label>
         <label>Telefon lub e-mail<input name="k" autocomplete="email" required></label>
         <label class="cala">Czego dotyczy zapytanie
@@ -244,7 +245,6 @@ function iv_formularz() {
         <p class="zgoda cala">Dane z formularza wykorzystamy tylko do odpowiedzi na zapytanie. Więcej w <a href="' . esc_url(iv_u('polityka-prywatnosci/')) . '">polityce prywatności</a>.</p>
         <label class="hp" aria-hidden="true">Strona www<input name="www" tabindex="-1" autocomplete="off"></label>
         <input type="hidden" name="ts" value="">
-        <input type="hidden" name="action" value="iv_formularz">
         <button class="btn cala" type="submit">' . IV_MK . 'Wyślij zapytanie</button>
         <p class="uwaga cala" id="komunikat" role="status" aria-live="polite"></p>
       </form>';
