@@ -1,5 +1,6 @@
 <?php
 // formularz kontaktowy inVolte: mail HTML do firmy, honeypot, limit wysylek z jednego IP
+// bez parametru -f: home.pl wtedy podpisuje DKIM i SPF przechodzi (Return-Path serwera)
 declare(strict_types=1);
 ini_set('display_errors', '0');
 header('Content-Type: application/json; charset=utf-8');
@@ -91,7 +92,7 @@ $tresc = "--$granica\r\nContent-Type: text/plain; charset=UTF-8\r\nContent-Trans
     . "--$granica\r\nContent-Type: text/html; charset=UTF-8\r\nContent-Transfer-Encoding: base64\r\n\r\n" . chunk_split(base64_encode($html))
     . "--$granica--\r\n";
 
-$ok = mail(DO_KOGO, '=?UTF-8?B?' . base64_encode($tytul) . '?=', $tresc, implode("\r\n", $naglowki), '-f' . NADAWCA);
+$ok = mail(DO_KOGO, '=?UTF-8?B?' . base64_encode($tytul) . '?=', $tresc, implode("\r\n", $naglowki));
 if (!$ok) odp(false, $blad_ogolny, 500);
 
 // potwierdzenie dla nadawcy (gdy podal e-mail)
@@ -120,7 +121,7 @@ if ($email !== '') {
     $t2 = "--$g2\r\nContent-Type: text/plain; charset=UTF-8\r\nContent-Transfer-Encoding: base64\r\n\r\n" . chunk_split(base64_encode($pt))
         . "--$g2\r\nContent-Type: text/html; charset=UTF-8\r\nContent-Transfer-Encoding: base64\r\n\r\n" . chunk_split(base64_encode($p))
         . "--$g2--\r\n";
-    @mail($email, '=?UTF-8?B?' . base64_encode('Otrzymaliśmy Twoje zapytanie - inVolte') . '?=', $t2, implode("\r\n", $n2), '-f' . NADAWCA);
+    @mail($email, '=?UTF-8?B?' . base64_encode('Otrzymaliśmy Twoje zapytanie - inVolte') . '?=', $t2, implode("\r\n", $n2));
 }
 $lista[] = $teraz;
 @file_put_contents($plik, implode("\n", $lista), LOCK_EX);
