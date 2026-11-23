@@ -1,0 +1,197 @@
+Options -Indexes -MultiViews
+DirectoryIndex index.php index.html
+AddDefaultCharset UTF-8
+
+RewriteEngine On
+RewriteBase /
+
+# jedna wersja adresu: https://involte.pl (bez www)
+RewriteCond %{HTTP_HOST} ^www\.involte\.pl$ [NC]
+RewriteRule ^ https://involte.pl%{REQUEST_URI} [R=301,L]
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+RewriteCond %{HTTP_HOST} ^involte\.pl$ [NC]
+RewriteRule ^ https://involte.pl%{REQUEST_URI} [R=301,L]
+
+# katalog bez ukosnika: od razu https z ukosnikiem (mod_dir dawal http)
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^(.+[^/])$ https://involte.pl/$1/ [R=301,L]
+
+# stare adresy WordPressa (?page_id=, ?p=)
+RewriteCond %{QUERY_STRING} !(^|&)preview=
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{QUERY_STRING} (^|&)(page_id|p)=106(&|$)
+RewriteRule ^(index\.php)?$ https://involte.pl/? [R=301,L]
+RewriteCond %{QUERY_STRING} !(^|&)preview=
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{QUERY_STRING} (^|&)(page_id|p)=117(&|$)
+RewriteRule ^(index\.php)?$ https://involte.pl/kontakt/? [R=301,L]
+RewriteCond %{QUERY_STRING} !(^|&)preview=
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{QUERY_STRING} (^|&)(page_id|p)=790(&|$)
+RewriteRule ^(index\.php)?$ https://involte.pl/co-i-jak/? [R=301,L]
+RewriteCond %{QUERY_STRING} !(^|&)preview=
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{QUERY_STRING} (^|&)(page_id|p)=815(&|$)
+RewriteRule ^(index\.php)?$ https://involte.pl/czy-mozna-w-polsce/? [R=301,L]
+RewriteCond %{QUERY_STRING} !(^|&)preview=
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{QUERY_STRING} (^|&)(page_id|p)=823(&|$)
+RewriteRule ^(index\.php)?$ https://involte.pl/czy-to-sie-oplaca/? [R=301,L]
+RewriteCond %{QUERY_STRING} !(^|&)preview=
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{QUERY_STRING} (^|&)(page_id|p)=832(&|$)
+RewriteRule ^(index\.php)?$ https://involte.pl/dlaczego-fotowoltaika/? [R=301,L]
+RewriteCond %{QUERY_STRING} !(^|&)preview=
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{QUERY_STRING} (^|&)(page_id|p)=834(&|$)
+RewriteRule ^(index\.php)?$ https://involte.pl/dotacje-w-programie-prosument/? [R=301,L]
+RewriteCond %{QUERY_STRING} !(^|&)preview=
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{QUERY_STRING} (^|&)(page_id|p)=837(&|$)
+RewriteRule ^(index\.php)?$ https://involte.pl/duze-instalacje-fotowoltaiczne/? [R=301,L]
+RewriteCond %{QUERY_STRING} !(^|&)preview=
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{QUERY_STRING} (^|&)(page_id|p)=839(&|$)
+RewriteRule ^(index\.php)?$ https://involte.pl/ile-to-kosztuje/? [R=301,L]
+RewriteCond %{QUERY_STRING} !(^|&)preview=
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{QUERY_STRING} (^|&)(page_id|p)=841(&|$)
+RewriteRule ^(index\.php)?$ https://involte.pl/mikro-i-male-instalacje/? [R=301,L]
+RewriteCond %{QUERY_STRING} !(^|&)preview=
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{QUERY_STRING} (^|&)(page_id|p)=843(&|$)
+RewriteRule ^(index\.php)?$ https://involte.pl/o-nas/? [R=301,L]
+RewriteCond %{QUERY_STRING} !(^|&)preview=
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{QUERY_STRING} (^|&)(page_id|p)=845(&|$)
+RewriteRule ^(index\.php)?$ https://involte.pl/serwis-instalacji-fotowoltaicznych/? [R=301,L]
+RewriteCond %{QUERY_STRING} !(^|&)preview=
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{QUERY_STRING} (^|&)(page_id|p)=847(&|$)
+RewriteRule ^(index\.php)?$ https://involte.pl/prad-ze-slonca/? [R=301,L]
+RewriteCond %{QUERY_STRING} !(^|&)preview=
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{QUERY_STRING} (^|&)(page_id|p)=852(&|$)
+RewriteRule ^(index\.php)?$ https://involte.pl/projektowanie-i-przygotowanie-dokumentacji/? [R=301,L]
+RewriteCond %{QUERY_STRING} !(^|&)preview=
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{QUERY_STRING} (^|&)(page_id|p)=854(&|$)
+RewriteRule ^(index\.php)?$ https://involte.pl/projektowanie-i-przygotowanie-dokumentacji/? [R=301,L]
+RewriteCond %{QUERY_STRING} !(^|&)preview=
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{QUERY_STRING} (^|&)(page_id|p)=856(&|$)
+RewriteRule ^(index\.php)?$ https://involte.pl/pytania-i-odpowiedzi/? [R=301,L]
+RewriteCond %{QUERY_STRING} !(^|&)preview=
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{QUERY_STRING} (^|&)(page_id|p)=890(&|$)
+RewriteRule ^(index\.php)?$ https://involte.pl/nasze-realizacje/? [R=301,L]
+RewriteCond %{QUERY_STRING} !(^|&)preview=
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{QUERY_STRING} (^|&)(page_id|p)=904(&|$)
+RewriteRule ^(index\.php)?$ https://involte.pl/cennik/? [R=301,L]
+RewriteCond %{QUERY_STRING} !(^|&)preview=
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{QUERY_STRING} (^|&)(page_id|p)=169(&|$)
+RewriteRule ^(index\.php)?$ https://involte.pl/nasze-realizacje/? [R=301,L]
+RewriteCond %{QUERY_STRING} !(^|&)preview=
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{QUERY_STRING} (^|&)(page_id|p)=182(&|$)
+RewriteRule ^(index\.php)?$ https://involte.pl/nasze-realizacje/? [R=301,L]
+RewriteCond %{QUERY_STRING} !(^|&)preview=
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{QUERY_STRING} (^|&)(page_id|p)=183(&|$)
+RewriteRule ^(index\.php)?$ https://involte.pl/nasze-realizacje/? [R=301,L]
+RewriteCond %{QUERY_STRING} !(^|&)preview=
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{QUERY_STRING} (^|&)(page_id|p)=184(&|$)
+RewriteRule ^(index\.php)?$ https://involte.pl/nasze-realizacje/? [R=301,L]
+RewriteCond %{QUERY_STRING} !(^|&)preview=
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{QUERY_STRING} (^|&)(page_id|p)=185(&|$)
+RewriteRule ^(index\.php)?$ https://involte.pl/nasze-realizacje/? [R=301,L]
+RewriteCond %{QUERY_STRING} !(^|&)preview=
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{QUERY_STRING} (^|&)(page_id|p)=186(&|$)
+RewriteRule ^(index\.php)?$ https://involte.pl/nasze-realizacje/? [R=301,L]
+RewriteCond %{QUERY_STRING} !(^|&)preview=
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{QUERY_STRING} (^|&)(page_id|p)=187(&|$)
+RewriteRule ^(index\.php)?$ https://involte.pl/nasze-realizacje/? [R=301,L]
+RewriteCond %{QUERY_STRING} !(^|&)preview=
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{QUERY_STRING} (^|&)(page_id|p)=188(&|$)
+RewriteRule ^(index\.php)?$ https://involte.pl/nasze-realizacje/? [R=301,L]
+RewriteCond %{QUERY_STRING} !(^|&)preview=
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{QUERY_STRING} (^|&)(page_id|p)=189(&|$)
+RewriteRule ^(index\.php)?$ https://involte.pl/nasze-realizacje/? [R=301,L]
+RewriteCond %{QUERY_STRING} !(^|&)preview=
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{QUERY_STRING} (^|&)(page_id|p|post_type|portfolio|portfolio-category|author|cat|attachment_id)=
+RewriteRule ^(index\.php)?$ https://involte.pl/? [R=301,L]
+RewriteCond %{THE_REQUEST} \s/index\.php[\s?]
+RewriteCond %{QUERY_STRING} ^$
+RewriteRule ^index\.php$ https://involte.pl/ [R=301,L]
+
+RewriteRule ^home-1/?$ https://involte.pl/ [R=301,L,NC]
+RewriteRule ^projektowanie/?$ https://involte.pl/projektowanie-i-przygotowanie-dokumentacji/ [R=301,L,NC]
+RewriteRule ^certyfikaty/?$ https://involte.pl/o-nas/ [R=301,L,NC]
+RewriteRule ^dotacje/?$ https://involte.pl/dotacje-w-programie-prosument/ [R=301,L,NC]
+RewriteRule ^panele-fotowoltaiczne-cena/?$ https://involte.pl/ile-to-kosztuje/ [R=301,L,NC]
+RewriteRule ^polityka-cookies/?$ https://involte.pl/polityka-prywatnosci/ [R=301,L,NC]
+RewriteRule ^wspolpraca/?$ https://involte.pl/kontakt/ [R=301,L,NC]
+RewriteRule ^pomiary-i-odbiory-instalacji/?$ https://involte.pl/serwis-instalacji-fotowoltaicznych/ [R=301,L,NC]
+RewriteRule ^portfolio(-category)?(/.*)?$ https://involte.pl/nasze-realizacje/ [R=301,L,NC]
+RewriteRule ^countdown(/.*)?$ https://involte.pl/ [R=301,L,NC]
+RewriteRule ^author(/.*)?$ https://involte.pl/o-nas/ [R=301,L,NC]
+RewriteRule ^(comments/)?feed/?$ https://involte.pl/ [R=301,L,NC]
+RewriteRule ^(.+)/feed/?$ https://involte.pl/$1/ [R=301,L,NC]
+RewriteRule ^(wp-sitemap.*|sitemap_index|page-sitemap|post-sitemap)\.xml$ https://involte.pl/sitemap.xml [R=301,L,NC]
+# panel WordPressa jest w /wp - krotkie adresy logowania
+RewriteRule ^(wp-admin|admin|panel|logowanie)/?$ https://involte.pl/wp/wp-admin/ [R=302,L,NC]
+RewriteRule ^wp-login\.php$ https://involte.pl/wp/wp-login.php [R=302,L,NC]
+# pozostalosci starej strony (2024): 410
+RewriteRule ^(wp-includes|wp-content)(/.*)?$ - [G,L,NC]
+RewriteRule ^(xmlrpc|wp-cron|wp-config)\.php$ - [G,L,NC]
+RewriteRule ^(formularz\.php|404\.html|index\.html)$ https://involte.pl/ [R=301,L,NC]
+
+# WordPress
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+
+<FilesMatch "^\.">
+  Require all denied
+</FilesMatch>
+
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  <FilesMatch "\.(webp|png|jpg|svg|ico|woff2)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.(css|js)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+  <FilesMatch "\.(html|xml|txt|webmanifest)$">
+    Header set Cache-Control "public, max-age=600"
+  </FilesMatch>
+</IfModule>
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 month"
+</IfModule>
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/javascript application/json application/xml image/svg+xml application/manifest+json
+</IfModule>
+AddType application/manifest+json .webmanifest
+AddType font/woff2 .woff2
+AddType image/webp .webp
